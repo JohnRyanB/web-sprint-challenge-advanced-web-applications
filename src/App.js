@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
 import BubblePage from "./components/BubblePage";
 
 import Login from "./components/Login";
+import PrivateRoute from "./components/PrivateRoute";
 import "./styles.scss";
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
 				</header>
 				<Route exact path="/login" component={Login} />
 				<Route exact path="/" render={() => <Redirect to="/login" />} />
-				<Route exact path="/bubblepage" component={BubblePage} />
+				<PrivateRoute exact path="/bubblepage" component={BubblePage} />
 			</div>
 		</Router>
 	);

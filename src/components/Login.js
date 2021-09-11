@@ -23,9 +23,7 @@ export const Login = (props) => {
 				setFormValues(initialFormValues);
 				props.history.push("/bubblepage");
 			})
-			.catch((err) =>
-				setError(`${JSON.stringify(err.message)}, username or password invalid`)
-			);
+			.catch((err) => setError(JSON.stringify(err.message)));
 	};
 
 	const [error, setError] = useState(null);
